@@ -4,56 +4,58 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
 
+To start a local development server, run:
+- clone Repository
+- install dependencies
+  ```bash 
+  npm install
+  ```
+- run the application
 ```bash
 ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Deploying the Application on GCP
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### steps
+1. Build the Angular application for production:
+  ```bash
+  ng build --prod
+  ```
+This will generate the production-ready files in the dist/ directory.
 
-```bash
-ng generate component component-name
-```
+2. Install the Firebase CLI:
+  ```bash
+  npm install -g firebase-tools
+  ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Initialize Firebase Hosting and select GCP project:
+  ```bash
+  firebase init hosting
+  ```
+4. Deploy the application:
+  ```bash
+  firebase deploy
+  ```
+## Using the To-Do List Application
 
-```bash
-ng generate --help
-```
+Navigate to the application in your browser.
+- Sign-in Page:
 
-## Building
+Sign-in by filling out the form.
+If you do not have an account, click the "Sign up" link to navigate to the sign-up page.
+- Dashboard:
 
-To build the project run:
+View your list of tasks.
 
-```bash
-ng build
-```
+Use the "Create Task" button to add a new task.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Edit or delete tasks directly from the list.
 
-## Running unit tests
+- 404 Page:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+If you navigate to an invalid route, you'll see a "404 Page Not Found" message with a link to return to the home page.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
